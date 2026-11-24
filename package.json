@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev -H 0.0.0.0 -p 43117",
-    "build": "next build",
+    "build": "node scripts/restore-media.mjs && next build",
     "start": "next start -H 0.0.0.0 -p 43117",
-    "lint": "eslint"
+    "lint": "eslint",
+    "postinstall": "node scripts/restore-media.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.9.0",
